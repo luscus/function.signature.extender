@@ -1,0 +1,33 @@
+{
+  "name": "function.signature.extender",
+  "license": "MIT",
+  "version": "0.0.1",
+  "homepage": "https://github.com/luscus/function.signature.extender",
+  "author": "https://github.com/luscus/function.signature.extender/graphs/contributors",
+  "description": "Allows to extend the signature of any function with new arguments.",
+  "keywords": [
+    "function",
+    "signature",
+    "extention"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "chai": "1.9.1",
+    "grunt": "0.4.5",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-license-report": "0.0.2",
+    "grunt-mocha-test": "0.10.2",
+    "load-grunt-tasks": "0.6.0",
+    "mocha": "1.21.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:luscus/function.signature.extender.git"
+  },
+  "main": "./lib/function.signature.extender",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "bugs": "https://github.com/luscus/function.signature.extender/issues"
+}
