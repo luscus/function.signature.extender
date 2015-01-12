@@ -1,7 +1,7 @@
 {
   "name": "function.signature.extender",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/luscus/function.signature.extender",
   "author": "https://github.com/luscus/function.signature.extender/graphs/contributors",
   "description": "Allows to extend the signature of any function with new arguments.",
@@ -10,8 +10,7 @@
     "signature",
     "extention"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "1.9.1",
     "grunt": "0.4.5",
