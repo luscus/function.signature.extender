@@ -5,7 +5,9 @@
 
 Allows to extend the signature of any function with new arguments.
 
-The new arguments are appended at the end of the signature.
+The new arguments are appended at the start of the signature:
+
+    fx(arg1, arg2) ==> add new1 ==> fx(new1, arg1, arg2)
 
 Use case: you write a [automaton plugin](https://github.com/luscus/application.mixin.automaton) extending a application
 object using state templates that overwrite the app methods when they are activated. A `state` method is added to
@@ -25,7 +27,7 @@ Context and closures are useless here, we have to inject the `changeToState` at 
     }
 
     // loading state modifies signature (purpose of the function.signature.extender)
-    function changedStateMethod (arg1, arg2, changeToState) {
+    function changedStateMethod (changeToState, arg1, arg2) {
         if (condition) {
             changeToState(xyz); // changeToState now exists in run context
         }
