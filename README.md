@@ -34,9 +34,9 @@ Context and closures are useless here, we have to inject the `changeToState` at 
     }
 
     // call to someMethod does
-    app.someMethod = function () {
-        arguments[arguments.length] = automatonLib.changeToState;
-        return changedStateMethod.apply(arguments); // code runs without error
+    appObject.someMethod = function someMethodWrapper () {
+        var extendedArguments = Array.prototype.concat.call([automatonLib.changeToState], arguments);
+        return changedStateMethod.apply(appObject, extendedArguments); // code runs without error
     }
 
 # Usage
@@ -61,12 +61,12 @@ Context and closures are useless here, we have to inject the `changeToState` at 
 
     // inject single argument
     var extendedArguments = Array.prototype.concat.call(['value for myNewArgument'], arguments);
-    newSimpleFunction.apply(extendedArguments);
+    newSimpleFunction.apply(appObject, extendedArguments);
 
 
     // inject multiple arguments (has to match the order of the new signature arguments)
     extendedArguments = Array.prototype.concat.call(['value for myNewArgument', 'value for andAnother'], arguments);
-    newMultiFunction.apply(extendedArguments);
+    newMultiFunction.apply(appObject, extendedArguments);
 
 
 
