@@ -57,14 +57,16 @@ Context and closures are useless here, we have to inject the `changeToState` at 
     var newMultiFunction = signatureExtender(multiFunction, ['myNewArgument', 'andAnother]);
 
 
-## Inject value
+## Inject argument values
 
-    arguments[arguments.length] = 'value for myNewArgument';
-    newSimpleFunction.apply(arguments);
+    // inject single argument
+    var extendedArguments = Array.prototype.concat.call(['value for myNewArgument'], arguments);
+    newSimpleFunction.apply(extendedArguments);
 
 
-    arguments[arguments.length] = 'value for andAnother';
-    newMultiFunction.apply(arguments);
+    // inject multiple arguments (has to match the order of the new signature arguments)
+    extendedArguments = Array.prototype.concat.call(['value for myNewArgument', 'value for andAnother'], arguments);
+    newMultiFunction.apply(extendedArguments);
 
 
 
